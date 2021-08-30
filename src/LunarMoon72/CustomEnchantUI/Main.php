@@ -38,7 +38,7 @@ class Main extends PluginBase
   return true;
   }
   public function ceui($player){
-  	$form = $this->getServer()->getPluginManager()->getPlugin("FormAPI")->createCustomForm(function(Player $player, int $data = null){
+  	$form = $this->getServer()->getPluginManager()->getPlugin("FormAPI")->createSimpleForm(function(Player $player, int $data = null){
         if($data === null){
 
             return true;
@@ -56,7 +56,7 @@ class Main extends PluginBase
   	$form->setTitle("§cSelect a category");
   	$form->addButton("§4Weapons");
   	$form->addButton("§bTools");
-  	$form->sendToPlayer();
+  	$form->sendForm($form);
   	return $form;
   }
   public function armor($player){
@@ -88,7 +88,7 @@ class Main extends PluginBase
     $form->addSlider("Obsidian Sheild", 0, 5);
     $form->addSlider("Springs", 0, 3);
     $form->addSlider("Gears", 0, 3);
-    $form->sendToPlayer();
+    $form->sendForm($form);
     return $form;
   }
   public function weapon($player)
@@ -117,7 +117,7 @@ class Main extends PluginBase
     $form->addSlider("Deathbringer", 0, 10);
     $form->addSlider("Aerial", 0, 10);
     $form->addSlider("LifeSteal", 0, 10);
-    $form->sendToPlayer();
+    $form->sendForm($form);
     return $form;
   }
 
