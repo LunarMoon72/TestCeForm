@@ -45,18 +45,18 @@ class Main extends PluginBase
         }
         switch($data){
             case 0:
-               $player->armor($player);
+               $this->armor($player);
             break;
 
             case 1:
-               $player->weapon($player);
+               $this->weapon($player);
             break;
         }
     });
   	$form->setTitle("§cSelect a category");
   	$form->addButton("§4Weapons");
   	$form->addButton("§bTools");
-  	$form->sendForm($form);
+  	$form->sendForm($player);
   	return $form;
   }
   public function armor($player){
@@ -88,7 +88,7 @@ class Main extends PluginBase
     $form->addSlider("Obsidian Sheild", 0, 5);
     $form->addSlider("Springs", 0, 3);
     $form->addSlider("Gears", 0, 3);
-    $form->sendForm($form);
+    $form->sendForm($player);
     return $form;
   }
   public function weapon($player)
@@ -117,7 +117,7 @@ class Main extends PluginBase
     $form->addSlider("Deathbringer", 0, 10);
     $form->addSlider("Aerial", 0, 10);
     $form->addSlider("LifeSteal", 0, 10);
-    $form->sendForm($form);
+    $form->sendForm($player);
     return $form;
   }
 
